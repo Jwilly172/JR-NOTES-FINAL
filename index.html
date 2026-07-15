@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dispatch — Notes & Tasks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #afccde;
@@ -84,7 +84,7 @@
     background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
     background-attachment: fixed;
     color: var(--ink);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     min-height: 100vh;
     transition: background 0.25s ease, color 0.25s ease;
@@ -284,7 +284,7 @@
   }
 
   .panel-title .count {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
     color: var(--ink-soft);
     font-weight: 400;
@@ -300,7 +300,7 @@
 
   .entry-form input, .entry-form textarea {
     flex: 1;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 13.5px;
     padding: 10px 13px;
     border: 1px solid var(--rule);
@@ -312,7 +312,7 @@
   }
 
   .entry-form select.loc-select {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
     padding: 0 24px 0 10px;
     border: 1px solid var(--rule);
@@ -334,6 +334,17 @@
     border-color: var(--ink);
   }
 
+  .filing-hint {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .filing-hint strong {
+    color: var(--info);
+    font-weight: 600;
+  }
+
   .filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -342,7 +353,7 @@
   }
 
   .filter-chip {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 10.5px;
     letter-spacing: 0.02em;
     padding: 4px 9px;
@@ -364,14 +375,16 @@
 
   .loc-tag {
     display: inline-block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
     font-size: 9.5px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--accent);
-    border: 1px solid var(--accent);
-    padding: 1px 5px;
-    border-radius: 3px;
-    margin-bottom: 4px;
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-bottom: 6px;
   }
 
   .entry-form button {
@@ -434,17 +447,23 @@
   .row:last-child { margin-bottom: 0; }
 
   .stub {
-    font-size: 10.5px;
-    color: var(--ink-soft);
-    min-width: 40px;
-    padding-top: 2px;
-    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 22px;
+    padding: 0 8px;
+    background: var(--paper-alt);
+    border-radius: 8px;
+    flex-shrink: 0;
   }
 
   .stub .num {
-    display: block;
-    font-weight: 600;
-    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
   }
 
   .row-body { flex: 1; min-width: 0; }
@@ -478,10 +497,10 @@
   .row-del:hover { color: var(--accent); background: var(--accent-soft); }
 
   .checkbox {
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
     border: 1.5px solid var(--ink);
-    border-radius: 3px;
+    border-radius: 6px;
     cursor: pointer;
     flex-shrink: 0;
     margin-top: 2px;
@@ -504,19 +523,17 @@
 
   .stamp {
     position: absolute;
-    right: 4px;
-    top: 10px;
+    right: 12px;
+    top: 12px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 9px;
+    font-size: 9.5px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--amber);
-    border: 1px solid var(--amber);
-    padding: 1px 5px;
-    border-radius: 3px;
-    transform: rotate(-4deg);
-    opacity: 0.85;
+    color: var(--white);
+    background: var(--amber);
+    padding: 2px 8px;
+    border-radius: 8px;
   }
 
   .checklist-wrap {
@@ -695,7 +712,7 @@
   }
 
   .cl-time {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 12.5px;
     font-weight: 500;
     color: var(--ink-soft);
@@ -876,7 +893,7 @@
   .past-heading:hover { color: var(--ink); }
 
   .past-heading span#past-toggle-count {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     letter-spacing: 0;
     font-weight: 400;
     color: var(--ink-soft);
@@ -912,7 +929,7 @@
     transform: translateX(-50%) translateY(12px);
     background: var(--ink);
     color: var(--paper);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 12px;
     padding: 9px 16px;
     border-radius: 6px;
@@ -977,7 +994,7 @@
     color: var(--ink-soft);
     text-decoration: underline;
     cursor: pointer;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 10.5px;
     padding: 0;
   }
@@ -1047,6 +1064,7 @@
       <textarea id="note-input" rows="1" placeholder="Jot something down…" maxlength="500"></textarea>
       <button type="submit">Add</button>
     </form>
+    <div class="filing-hint">Filing under <strong id="note-filing-loc"></strong></div>
     <div class="filter-bar" id="notes-filter"></div>
     <div class="list" id="notes-list"></div>
   </section>
@@ -1059,6 +1077,7 @@
       <input type="text" id="task-input" placeholder="Quick task…" maxlength="200" />
       <button type="submit">Add</button>
     </form>
+    <div class="filing-hint">Filing under <strong id="task-filing-loc"></strong></div>
     <div class="filter-bar" id="tasks-filter"></div>
     <div class="list" id="tasks-list"></div>
   </section>
@@ -1099,7 +1118,14 @@
   const SEQ_KEY = 'dispatch:seq';
   const THEME_KEY = 'dispatch:theme';
 
-  const LOCATIONS = ['Delray', 'Jacksonville', 'Pompano', 'Palm Beach', 'Sodel', 'Montauk', 'Charleston'];
+  const LOCATIONS = ['Delray', 'Jacksonville', 'Pompano', 'Palm Beach', 'Sodel', 'Montauk', 'Charleston', 'All Locations'];
+
+  function matchesLocationFilter(itemLoc, filter) {
+    if (filter === 'All') return true;
+    if (itemLoc === filter) return true;
+    if (filter !== 'All Locations' && itemLoc === 'All Locations') return true;
+    return false;
+  }
 
   const CHECKLIST_ITEMS = [
     { id: 'c1', time: '8:00 – 8:45 AM', title: 'Morning Cleanup', task: 'Review and log any movements from after 5pm the previous night. Clear overnight inbox messages. Verify all cart statuses are accurately logged in DG.', critical: false, start: 480 },
@@ -1294,10 +1320,13 @@
   populateLocSelect(document.getElementById('note-loc'));
   populateLocSelect(document.getElementById('task-loc'));
 
+  document.getElementById('note-loc').addEventListener('change', () => updateFilingHint('note-loc', 'note-filing-loc'));
+  document.getElementById('task-loc').addEventListener('change', () => updateFilingHint('task-loc', 'task-filing-loc'));
+
   function renderFilterBar(el, current, onPick) {
     const chips = ['All', ...LOCATIONS];
     el.innerHTML = chips.map(loc =>
-      `<button type="button" class="filter-chip ${loc === current ? 'active' : ''}" data-loc="${loc}">${loc}</button>`
+      `<button type="button" class="filter-chip ${loc === current ? 'active' : ''}" data-loc="${loc}">${loc === 'All' ? 'Everything' : loc}</button>`
     ).join('');
     el.querySelectorAll('.filter-chip').forEach(btn => {
       btn.addEventListener('click', () => onPick(btn.dataset.loc));
@@ -1398,14 +1427,21 @@
     if (loader) loader.classList.add('hidden');
   }
 
+  function updateFilingHint(selectId, hintId) {
+    const val = document.getElementById(selectId).value;
+    document.getElementById(hintId).textContent = val;
+  }
+
   function renderNotes() {
     renderFilterBar(document.getElementById('notes-filter'), notesFilter, (loc) => {
       notesFilter = loc;
+      if (loc !== 'All') document.getElementById('note-loc').value = loc;
       renderNotes();
     });
+    updateFilingHint('note-loc', 'note-filing-loc');
     const active = notes.filter(n => !n.archived);
     notesCount.textContent = active.length ? `${active.length} entr${active.length === 1 ? 'y' : 'ies'}` : '';
-    const visible = notesFilter === 'All' ? active : active.filter(n => n.loc === notesFilter);
+    const visible = active.filter(n => matchesLocationFilter(n.loc, notesFilter));
     if (!visible.length) {
       notesList.innerHTML = `<div class="empty-state">${active.length ? `No entries for ${notesFilter} yet.` : `No entries yet. First one's free — start typing above.`}</div>`;
       return;
@@ -1435,11 +1471,13 @@
   function renderTasks() {
     renderFilterBar(document.getElementById('tasks-filter'), tasksFilter, (loc) => {
       tasksFilter = loc;
+      if (loc !== 'All') document.getElementById('task-loc').value = loc;
       renderTasks();
     });
+    updateFilingHint('task-loc', 'task-filing-loc');
     const active = tasks.filter(t => !t.done);
     tasksCount.textContent = active.length ? `${active.length} open` : '';
-    const visible = tasksFilter === 'All' ? active : active.filter(t => t.loc === tasksFilter);
+    const visible = active.filter(t => matchesLocationFilter(t.loc, tasksFilter));
     if (!visible.length) {
       tasksList.innerHTML = `<div class="empty-state">${active.length ? `No tasks for ${tasksFilter} yet.` : `No tasks yet. Add something quick to knock out.`}</div>`;
       return;
@@ -1473,7 +1511,7 @@
     });
     const archived = notes.filter(n => n.archived);
     countEl.textContent = archived.length ? `${archived.length} entr${archived.length === 1 ? 'y' : 'ies'}` : '';
-    const visible = pastNotesFilter === 'All' ? archived : archived.filter(n => n.loc === pastNotesFilter);
+    const visible = archived.filter(n => matchesLocationFilter(n.loc, pastNotesFilter));
     if (!visible.length) {
       el.innerHTML = `<div class="empty-state">Nothing checked off yet.</div>`;
       return;
@@ -1509,7 +1547,7 @@
     });
     const done = tasks.filter(t => t.done);
     countEl.textContent = done.length ? `${done.length} done` : '';
-    const visible = pastTasksFilter === 'All' ? done : done.filter(t => t.loc === pastTasksFilter);
+    const visible = done.filter(t => matchesLocationFilter(t.loc, pastTasksFilter));
     if (!visible.length) {
       el.innerHTML = `<div class="empty-state">Nothing checked off yet.</div>`;
       return;
